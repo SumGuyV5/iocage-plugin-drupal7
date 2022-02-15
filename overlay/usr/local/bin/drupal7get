@@ -57,11 +57,13 @@ get_update()
 	drush pm-update drupal -y
 
 	# echo "Leaving maintenance mode."
-	# drush vset --exact maintenance_mode 0
-	# drush cache-clear all
+	drush vset --exact maintenance_mode 0
+	drush cache-clear all
 
-	echo "Please go to your website status report and update your database."
-	echo "check your website and exit maintenance mode."
+	drush cron
+
+	# echo "Please go to your website status report and update your database."
+	# echo "check your website and exit maintenance mode."
 }
 
 # Stub for something which gets quasselsettings
